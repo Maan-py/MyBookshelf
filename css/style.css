@@ -1,0 +1,208 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+h1:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.button {
+  border-radius: 0.25rem;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: 1px solid transparent;
+  text-align: center;
+}
+
+.add-button {
+  background-color: #909193;
+  border: 1px solid #909193;
+  color: white;
+}
+
+.add-button:hover {
+  background-color: #414558;
+  border: 1px solid #414558;
+}
+
+.add-button:focus {
+  box-shadow: 0 0 0 4px #909193;
+}
+
+.container {
+  display: flex;
+  gap: 0;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.card {
+  box-shadow: 0 0 4px grey;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  color: #414558;
+}
+
+.card > .card-title {
+  margin: 0;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.navbar {
+  padding: 1rem 1.5rem;
+  background-color: #414558;
+  color: #909193;
+}
+
+.navbar > .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+h1 {
+  margin: 0;
+}
+
+.search-form > input {
+  margin: 0;
+  border-radius: 0.25rem 0 0 0.25rem;
+  border: 2px solid #909193;
+  color: #414558;
+  padding: 0.25rem 0.5rem;
+}
+
+.search-form > input:focus {
+  box-shadow: 0 0 4px #909193;
+  outline: none;
+}
+
+.search-form > .button {
+  padding: 0.25rem 0.5rem;
+  background-color: #909193;
+  border: 2px solid #909193;
+  border-left: none;
+  color: #414558;
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+.search-form > .button:hover {
+  background-color: #414558;
+  color: #909193;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.read:hover,
+.check:hover,
+.delete:hover,
+.edit:hover {
+  transform: scale(1.1);
+}
+
+.read {
+  width: 30px;
+  height: 30px;
+  background: url("../assets/icons8-checkmark-white-30.png");
+  background-size: contain;
+  margin-left: auto;
+  margin-right: 10px;
+  cursor: pointer;
+  border: none;
+  float: left;
+}
+
+.check {
+  width: 30px;
+  height: 30px;
+  background: url("../assets/icons8-checkmark-30.png");
+  background-size: contain;
+  margin-left: auto;
+  margin-right: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.delete {
+  width: 30px;
+  height: 30px;
+  background: url("../assets/icons8-trash-50.png");
+  background-size: cover;
+  margin-left: auto;
+  margin-right: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.edit {
+  width: 30px;
+  height: 30px;
+  background: url("../assets/icons8-edit-30.png");
+  background-size: contain;
+  margin-left: auto;
+  margin-right: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.input-field > input:focus {
+  outline: 2px solid #414558;
+  outline-offset: 1px;
+}
+
+.book-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 1080px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .navbar > .container {
+    flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .navbar > .container {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+}

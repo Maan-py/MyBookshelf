@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maan's Bookshelf</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <body>
+      <header style="display: inline">
+        <nav class="navbar">
+          <div class="container">
+            <h1>Maan's Bookshelf</h1>
+            <form style="display: flex; gap: 0; min-height: 1.75rem" class="search-form">
+              <input type="text" name="search" id="inputSearch" placeholder="Masukkan Judul Buku" />
+              <button type="submit" id="searchButton" class="button" value="Cari">
+                <span>Cari</span>
+              </button>
+            </form>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <div class="container">
+          <div class="col" style="flex-basis: 30%">
+            <div class="card">
+              <h2 class="card-title">Tambah Buku</h2>
+              <form id="formAddBook" action="" style="display: flex; flex-direction: column; gap: 1rem">
+                <div style="display: flex; flex-direction: column; gap: 0.5rem">
+                  <label for="title">Judul Buku</label>
+                  <input style="padding: 0.25rem 0.5rem" type="text" name="title" id="title" required />
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem">
+                  <label for="author">Penulis Buku</label>
+                  <input style="padding: 0.25rem 0.5rem" type="text" name="author" id="author" required />
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem">
+                  <label for="Year">Tahun Publikasi Buku</label>
+                  <input style="padding: 0.25rem 0.5rem" type="number" name="Year" id="year" required />
+                </div>
+                <div>
+                  <input type="checkbox" name="isComplete" id="isComplete" />
+                  <label style="padding: 0.25rem 0.5rem" for="isComplete">Telah selesai dibaca</label>
+                </div>
+                <button type="submit" class="button add-button">Masukkan Buku Ke Rak</button>
+              </form>
+            </div>
+          </div>
+          <div class="col" style="flex-basis: 70%">
+            <section class="card">
+              <h2 class="card-title">Belum selesai Dibaca</h2>
+              <div id="inCompleted" class="book-items"></div>
+              <div class="inCompleted"></div>
+            </section>
+            <section class="card">
+              <h2 class="card-title">Telah Selesai Dibaca</h2>
+              <div id="completed" class="book-items"></div>
+              <div class="completed"></div>
+            </section>
+          </div>
+        </div>
+      </main>
+      <script src="js/script.js"></script>
+    </body>
+  </body>
+</html>
