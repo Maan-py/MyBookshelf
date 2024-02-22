@@ -144,7 +144,7 @@ function makeBookList(bookObject) {
 function addBook() {
   const title = document.getElementById("title").value;
   const author = document.getElementById("author").value;
-  const year = document.getElementById("year").value;
+  const year = parseInt(document.getElementById("year").value);
   const isComplete = document.getElementById("isComplete").checked;
 
   const id = generateID();
@@ -153,6 +153,21 @@ function addBook() {
 
   document.dispatchEvent(new Event(LOAD_BOOKS));
   saveBooks();
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
+    },
+  });
+  Toast.fire({
+    icon: "success",
+    title: "Buku berhasil disimpan!",
+  });
 }
 
 function addBookToRead(bookId) {
@@ -163,6 +178,21 @@ function addBookToRead(bookId) {
   if (books) bookTarget.isComplete = true;
   document.dispatchEvent(new Event(LOAD_BOOKS));
   saveBooks();
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
+    },
+  });
+  Toast.fire({
+    icon: "success",
+    title: "Buku telah selesai dibaca",
+  });
 }
 
 function deleteBook(bookId) {
@@ -174,6 +204,22 @@ function deleteBook(bookId) {
   books.splice(index, 1);
   document.dispatchEvent(new Event(LOAD_BOOKS));
   saveBooks();
+
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
+    },
+  });
+  Toast.fire({
+    icon: "success",
+    title: "Buku berhasil dihapus!",
+  });
 }
 
 function unreadBook(bookId) {
@@ -184,6 +230,21 @@ function unreadBook(bookId) {
   bookTarget.isComplete = false;
   document.dispatchEvent(new Event(LOAD_BOOKS));
   saveBooks();
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
+    },
+  });
+  Toast.fire({
+    icon: "success",
+    title: "Buku belum selesai dibaca",
+  });
 }
 
 function editBook(bookId) {
@@ -197,10 +258,26 @@ function editBook(bookId) {
 
   newTitle.innerText = bookTarget.title = prompt("Masukkan Judul Baru", "Tentang Kamu");
   newAuthor.innerText = bookTarget.author = prompt("Masukkan Nama Penulis Baru", "Tere Liye");
-  newYear.innerText = bookTarget.year = prompt("Masukkan Tahun Publikasi Baru", "2016");
+  newYear.innerText = bookTarget.year = parseInt(prompt("Masukkan Tahun Publikasi Baru", 2016));
 
   document.dispatchEvent(new Event(LOAD_BOOKS));
   saveBooks();
+
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
+    },
+  });
+  Toast.fire({
+    icon: "success",
+    title: "Buku berhasil diedit!",
+  });
 }
 
 function resetForm() {
